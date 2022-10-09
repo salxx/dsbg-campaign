@@ -1,3 +1,1 @@
-<script>
-window.alert('asdf');  
-</script>
+alert('asdf');  

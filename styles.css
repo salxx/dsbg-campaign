@@ -1,0 +1,118 @@
+/* Style the buttons that are used to open and close the accordion panel */
+
+.menu-button {
+	color: #c3c0b9;
+	padding: 15px;
+	border-radius: 5px;
+	background-color: #283139;
+	border-width: 1px;
+}
+
+.menu-button:hover {
+  background-color: #414b53;
+}
+
+.overlay {
+	color: white;
+	position: absolute;
+	-webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+	border: solid;
+	background-color: #848075;
+	border-color: #222;
+	border-radius: 5px;
+	padding: 15px;
+}
+
+.menu {
+	z-index: 999;
+    width: 250px;
+    height: 500px;
+}
+
+.map {
+    width: 500px;
+    height: 500px;
+}
+
+.bordered {
+  margin: auto;
+  border: solid;
+  border-color: #111;
+  width: 800px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.bordered-sub {
+  width: 760px;
+}
+
+.condition-campaign {
+  font-size: 14;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 2px;
+  padding-right: 4px !important;
+  padding-left: 4px !important;
+  border-radius:5px; 
+  background-color: #455b92; 
+  color: #f8f8f8;
+}
+
+.condition-encounter {
+  font-size: 14;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 2px;
+  padding-right: 4px !important;
+  padding-left: 4px !important;
+  border-radius:5px; 
+  background-color: #3d754c; 
+  color: #f8f8f8;
+}
+
+.accordion {
+  background-color: #283139;
+  color: #c3c0b9;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.top-accordion {
+  padding: 15px;
+}
+
+
+.sub-accordion {
+  padding: 9px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active-top-accordion, .top-accordion:hover {
+  background-color: #414b53;
+}
+
+.active-sub-accordion, .sub-accordion:hover {
+  background-color: #414b53;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  color: #c3c0b9;
+  background-color: #2e3339;
+  padding: 0 18px;
+  text-align: center;
+  display: none;
+  overflow: hidden;
+}
+
+.panel-sub {
+  background-color: #2e3339 !important;
+}

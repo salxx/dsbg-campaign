@@ -1,8 +1,73 @@
 <html>
-  <head>
-    <script src="test.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    test
-  </body>
-</html>
+<link rel="stylesheet" href="styles.css">
+<head>
+  <script src="https://kit.fontawesome.com/cba2aba54b.js" crossorigin="anonymous"></script>
+  <script src="inventory.js" crossorigin="anonymous"></script>
+  <script src="accordion.js" crossorigin="anonymous"></script>
+  <script src="moveUI.js" crossorigin="anonymous"></script>
+  <script src="data.js" crossorigin="anonymous"></script>
+</head>
+
+<body onmousemove="mouse_position(event)" style="background-color: #22282b; color: #d8d4cc;">
+<div id="menu" class="menu overlay" onmousedown="menuOffset(event, this)" onmousemove="movePanel(event)" style="left: 0; top: 0;">
+<p>Inventory</p>
+<p id="inventory"></p>
+</div>
+
+<canvas id="mapCanvas" class="map overlay" onmousedown="menuOffset(event, this)" onmousemove="movePanel(event)" width="500" height="500" style="left: 0; top: 0;"></canvas>
+</div>
+
+<h1 style="text-align:center"><i class="fa-solid fa-dungeon"/></i> Encounter: Fort Inner Gate <i class="fa-solid fa-dungeon"></i></h1>
+
+<h2 style="text-align:center">Encounter Introduction</h2>
+<p style="text-align:center"><i>Your party reaches the giant gate that leads to the innermost part of the fort.<br>
+A group of Hollows lingers at its wake. Something seems odd about them...</i></p>
+
+<h2 style="text-align:center">Encounter Setup</h2>
+<div style="text-align:center">
+Prepare the 'BlaBla' encounter card.<br>
+Replace a Crossbow Hollow with a Firebomb Hollow.<br>
+You may enter the tile from any side.
+</div>
+
+<h2 style="text-align:center">Encounter Rules</h2>
+<div style="text-align:center">
+Defeat all foes.<br>
+Count the number of rounds. A round starts on enemy activations.
+</div>
+
+<h2 style="text-align:center">Encounter Events</h2>
+<span id="events"></span>
+
+<h2 style="text-align:center">Encounter Conclusion</h2>
+<span id="conclusion"></span>
+<span id="rewards"></span>
+
+<div style="text-align:center">
+<button class="menu-button">Encounter failed <i class="fa-solid fa-skull"></i></button>
+<button class="menu-button">Encounter completed <i class="fa-solid fa-play"></i></button>
+</div>
+
+</body>
+
+<!---------------->
+<!---------------->
+<!-- INIT:-->
+<!---------------->
+<!---------------->
+<script>
+  draw();
+
+  var i;
+  for (i = 0; i < eventData.length; i++) {
+    accordion(events, eventData[i], i > 0);
+  }
+  accordion(conclusion, conclusionData);
+  accordion(rewards, rewardData);
+  initAccordion();
+
+  var c = document.getElementById("mapCanvas");
+  var ctx = c.getContext("2d");
+  ctx.rect(20, 20, 150, 100);
+  ctx.stroke();
+</script>
